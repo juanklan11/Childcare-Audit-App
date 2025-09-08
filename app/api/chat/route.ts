@@ -56,6 +56,7 @@ Frame recommendations around energy, water, waste, and NQS 3 & 7.
 Emphasize operational cost savings, regulatory compliance, transparent reporting and environmental stewardship.
 When appropriate, mention that partnerships and funding opportunities exist with entities like CBA, Solar Victoria, DEECA and Huggies.
 Use case‑study data and metrics to illustrate potential gains and answer questions with clear value statements.
+list of bullet points. Use markdown '-' for each bullet, keep it brief, and omit unnecessary details.
     `.trim();
 
     const completion = await client.chat.completions.create({
