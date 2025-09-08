@@ -105,16 +105,26 @@ export default function LeadsPage() {
                     <td className="px-4 py-2">{r.position || "—"}</td>
                     <td className="px-4 py-2">{r.company || "—"}</td>
                     <td className="px-4 py-2">{r.location || "—"}</td>                
-                    <td className="px-4 py-2">
-                      {r.email ? (
-                        <a className="text-emerald-700 underline" href={r.email} target="_blank">
-                          {r.email}
+                   <td className="px-4 py-2">
+                        {r.email ? (
+                          <a
+                            href={`mailto:${r.email}`}
+                            className="text-emerald-700 underline"
+                          >
+                            {r.email}
+                          </a>
+                        ) : (
+                          "—"
+                        )}
+                      </td>
+                     <td className="px-4 py-2">
+                       {r.linkedin ? (
+                        <a className="text-emerald-700 underline" href={r.linkedin} target="_blank">
+                          {r.linkedin}
                         </a>
                       ) : (
                         "—"
-                      )}
-                    </td>
-                     <td className="px-4 py-2">{r.linkedin || "—"}</td>                    
+                      )}</td>                    
                   </tr>
                 ))
               )}
