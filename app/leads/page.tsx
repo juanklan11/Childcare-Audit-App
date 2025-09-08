@@ -4,11 +4,13 @@ import Image from "next/image";
 import React from "react";
 
 type Lead = {
-  ref?: string;
-  name?: string;
-  contact_ph?: string;
-  url?: string;
-  coordinates?: string;
+  ref: string;
+  name: string;
+  position?: string;
+  company?: string;
+  location?: string;
+  email?: string;
+  linkedin?: string;
 };
 
 function parseCSV(text: string): Lead[] {
