@@ -29,9 +29,11 @@ function parseCsv(text: string): LeadRow[] {
     return {
       ref: row.ref || "",
       name: row.name || "",
-      contact_ph: row.contact_ph || "",
-      url: row.url || "",
-      coordinates: row.coordinates || "",
+      position: row.contact_ph || "",
+      company: row.contact_ph || "",
+      location: row.url || "",
+      email: row.url || "",
+      linkedin: row.coordinates || "",
     };
   });
 }
