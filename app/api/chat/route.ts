@@ -52,7 +52,7 @@ Next Steps: Encourage prospects to (1) run a pilot audit at selected centres, (2
 
 Guidance for Responses
 If further information is requested provide the following email address: info@lidconsulting.com.au
-Each point should start with the bullet symbol (•), After the final bullet point, please add '//' to indicate the end.
+Each point should start with the bullet symbol (•), and add \n at the end to include a breakline.
 Do not use "**" 
 Always be concise, practical and precise.
 Keep it brief, and omit unnecessary details.
