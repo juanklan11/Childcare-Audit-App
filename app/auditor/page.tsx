@@ -28,8 +28,10 @@ import { Button } from "@/components/ui/button";
 // ---------- Types ----------
 type ExtractResult = {
   ok: boolean;
+  // Blob route returns 'url'; keep 'fileUrl' as fallback for older code/routes
+  url?: string;
   fileUrl?: string;
-  meta?: { filename: string; contentType: string; size: number };
+  meta?: { filename: string; contentType?: string; type?: string; size?: number };
   preview?: string;
   previewChars?: number;
   keyInfo?: Record<string, any>;
@@ -150,8 +152,18 @@ export default function AuditorPage() {
       form.append("file", selectedFile);
       const res = await fetch("/api/upload", { method: "POST", body: form });
       const json: ExtractResult = await res.json();
-      if (!res.ok || !json.fileUrl) throw new Error(json.error || "Upload failed");
-      setUploadUrl(json.fileUrl);
+
+      if (!res.ok) {
+        throw new Error(json.error || "Upload failed");
+      }
+
+      // NEW: prefer 'url' from Blob route; fallback to legacy 'fileUrl'
+      const finalUrl = json.url || json.fileUrl;
+      if (!finalUrl) {
+        throw new Error("Upload succeeded but no URL returned");
+      }
+
+      setUploadUrl(finalUrl);
       setResult(null);
     } catch (err: any) {
       setResult({ ok: false, error: err.message });
@@ -240,7 +252,7 @@ export default function AuditorPage() {
         <div className="mx-auto flex max-w-6xl items-center justify-between px-0 py-4">
           <div className="flex items-center gap-3">
             <Image
-              src="/logo-lid.svg" // put your logo file in /public (svg/png)
+              src="/logo-lid.svg"
               alt="LID Consulting"
               width={36}
               height={36}
