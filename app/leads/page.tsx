@@ -100,9 +100,9 @@ export default function LeadsPage() {
                   <tr key={`${r.ref || r.name || "row"}-${i}`} className="border-t">
                     <td className="px-4 py-2">{r.ref || "—"}</td>
                     <td className="px-4 py-2">{r.name || "—"}</td>
-                    <td className="px-4 py-2">{r.Positon || "—"}</td>
-                    <td className="px-4 py-2">{r.Company || "—"}</td>
-                    <td className="px-4 py-2">{r.Location || "—"}</td>                
+                    <td className="px-4 py-2">{r.positon || "—"}</td>
+                    <td className="px-4 py-2">{r.company || "—"}</td>
+                    <td className="px-4 py-2">{r.location || "—"}</td>                
                     <td className="px-4 py-2">
                       {r.email ? (
                         <a className="text-emerald-700 underline" href={r.email} target="_blank">
