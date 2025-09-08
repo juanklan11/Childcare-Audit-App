@@ -99,7 +99,7 @@ function ChatWidget() {
         onClick={() => setIsOpen((v) => !v)}
         className="fixed bottom-6 right-6 inline-flex items-center gap-2 rounded-full bg-emerald-600 px-4 py-3 text-sm font-semibold text-white shadow-lg hover:bg-emerald-700"
       >
-        {isOpen ? "Close chat" : "Chat with DeepSeek"}
+        {isOpen ? "Close chat" : "Chat with Lid Bot"}
         <svg className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
           <path d="M18 10c0 3.866-3.582 7-8 7-.85 0-1.665-.107-2.427-.308-.313-.083-.64-.05-.925.093L3 18l1.27-3.175c.1-.25.08-.533-.05-.76C3.458 12.988 3 11.54 3 10c0-3.866 3.582-7 8-7s7 3.134 7 7z" />
         </svg>
@@ -109,7 +109,7 @@ function ChatWidget() {
       {isOpen && (
         <div className="fixed bottom-20 right-6 w-[360px] overflow-hidden rounded-2xl border bg-white shadow-2xl">
           <div className="flex items-center justify-between border-b px-3 py-2">
-            <div className="text-sm font-semibold">Ask DeepSeek</div>
+            <div className="text-sm font-semibold">Ask Lid Bot</div>
             <button
               onClick={() => setIsOpen(false)}
               className="rounded p-1 text-slate-500 hover:bg-slate-100"
