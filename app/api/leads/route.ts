@@ -5,9 +5,11 @@ import { join } from "path";
 type LeadRow = {
   ref: string;
   name: string;
-  contact_ph?: string;
-  url?: string;
-  coordinates?: string;
+  position?: string;
+  company?: string;
+  location?: string;
+  email?: string;
+  linkedin?: string;
 };
 
 // Parse a CSV string into an array of LeadRow objects.
