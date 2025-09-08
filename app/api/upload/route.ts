@@ -2,11 +2,10 @@
 import { NextResponse } from "next/server";
 import { put } from "@vercel/blob";
 
-export const runtime = "nodejs";           // must be nodejs (not edge)
-export const dynamic = "force-dynamic";    // avoid static optimization of the route
+export const runtime = "nodejs";
+export const dynamic = "force-dynamic";
 
-// Optional: basic guardrails
-const MAX_BYTES = 25 * 1024 * 1024; // 25 MB
+const MAX_BYTES = 25 * 1024 * 1024; // 25MB
 const ALLOWED = [
   "application/pdf",
   "image/png",
@@ -29,25 +28,25 @@ export async function POST(req: Request) {
       return NextResponse.json({ ok: false, error: `Unsupported type: ${file.type}` }, { status: 415 });
     }
 
-    // Make a unique key inside a folder
     const key = `uploads/${crypto.randomUUID()}-${file.name}`;
 
-    // Persist to Vercel Blob (public by default here)
-    const { url, pathname, size, contentType } = await put(key, file, {
-      access: "public", // or "private" if you’ll sign URLs yourself
-      addRandomSuffix: false, // we already added a UUID
+    // Vercel Blob upload
+    const result = await put(key, file, {
+      access: "public",
+      addRandomSuffix: false,
       contentType: file.type || "application/octet-stream",
     });
 
+    // result has at least: url, pathname, contentType (no 'size')
     return NextResponse.json({
       ok: true,
-      url,                         // e.g. https://<your-bucket>.public.blob.vercel-storage.com/uploads/...
-      key: pathname,               // blob key in the store
-      meta: { filename: file.name, size, type: contentType },
+      url: result.url,
+      key: result.pathname ?? new URL(result.url).pathname,
+      meta: { filename: file.name, type: result.contentType },
       message: "Upload successful",
     });
   } catch (err: any) {
     console.error("Upload error:", err);
-    return NextResponse.json({ ok: false, error: err.message ?? "Upload failed" }, { status: 500 });
+    return NextResponse.json({ ok: false, error: err?.message ?? "Upload failed" }, { status: 500 });
   }
 }
