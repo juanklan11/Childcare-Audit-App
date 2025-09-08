@@ -79,11 +79,13 @@ export default function LeadsPage() {
           <table className="w-full text-sm">
             <thead>
               <tr className="bg-slate-50 text-left text-slate-500">
-                <th className="px-4 py-2">ref</th>
-                <th className="px-4 py-2">name</th>
-                <th className="px-4 py-2">contact_ph</th>
-                <th className="px-4 py-2">url</th>
-                <th className="px-4 py-2">coordinates</th>
+                <th className="px-4 py-2">Ref</th>
+                <th className="px-4 py-2">Name</th>
+                <th className="px-4 py-2">Position</th>
+                <th className="px-4 py-2">Company</th>
+                <th className="px-4 py-2">Location</th>
+                <th className="px-4 py-2">email</th>
+                <th className="px-4 py-2">Linkedin</th>
               </tr>
             </thead>
             <tbody>
