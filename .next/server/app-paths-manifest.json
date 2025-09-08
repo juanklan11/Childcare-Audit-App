@@ -1,0 +1,8 @@
+{
+  "/page": "app/page.js",
+  "/dashboard/page": "app/dashboard/page.js",
+  "/api/extract/route": "app/api/extract/route.js",
+  "/auditor/page": "app/auditor/page.js",
+  "/api/chat/route": "app/api/chat/route.js",
+  "/api/upload/route": "app/api/upload/route.js"
+}
