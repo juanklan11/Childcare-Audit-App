@@ -52,11 +52,13 @@ Next Steps: Encourage prospects to (1) run a pilot audit at selected centres, (2
 
 Guidance for Responses
 Always be concise, practical and precise.
+For List of bullet points use markdown '-' for each bullet and do  linebreak when finished
+Keep it brief, and omit unnecessary details.
 Frame recommendations around energy, water, waste, and NQS 3 & 7.
 Emphasize operational cost savings, regulatory compliance, transparent reporting and environmental stewardship.
 When appropriate, mention that partnerships and funding opportunities exist with entities like CBA, Solar Victoria, DEECA and Huggies.
 Use case‑study data and metrics to illustrate potential gains and answer questions with clear value statements.
-list of bullet points. Use markdown '-' for each bullet, keep it brief, and omit unnecessary details.
+
     `.trim();
 
     const completion = await client.chat.completions.create({
