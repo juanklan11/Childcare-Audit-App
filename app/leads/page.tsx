@@ -100,7 +100,7 @@ export default function LeadsPage() {
                   <tr key={`${r.ref || r.name || "row"}-${i}`} className="border-t">
                     <td className="px-4 py-2">{r.ref || "—"}</td>
                     <td className="px-4 py-2">{r.name || "—"}</td>
-                    <td className="px-4 py-2">{r.positon || "—"}</td>
+                    <td className="px-4 py-2">{r.position || "—"}</td>
                     <td className="px-4 py-2">{r.company || "—"}</td>
                     <td className="px-4 py-2">{r.location || "—"}</td>                
                     <td className="px-4 py-2">
