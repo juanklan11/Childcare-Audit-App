@@ -200,23 +200,26 @@ export default function NEPIAuditDashboard() {
     <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white text-slate-900">
       {/* PAGE HEADER */}
       <header className="sticky top-0 z-40 border-b bg-white/80 backdrop-blur">
-                    <div className="mx-auto flex max-w-6xl items-center justify-between px-0 py-4">
-                      <div className="flex items-center gap-3">
-                        <Image
-                          src="/logo-lid.svg" // put your logo file in /public (svg/png)
-                          alt="LID Consulting"
-                          width={36}
-                          height={36}
-                          className="h-9 w-9"
-                          priority
-                        />
-                        <div>
-                          <div className="text-sm font-semibold tracking-tight">LID Consulting</div>
-                          <div className="text-xs text-slate-500">Childcare Energy & Sustainability</div>
-                        </div>
-                      </div>
-                    </div>
-                  </header>
+        <div className="mx-auto flex max-w-6xl items-center justify-between px-0 py-4">
+          <div className="flex items-center gap-3">
+            <Link href="/" className="flex items-center gap-3">
+              <Image
+                src="/logo-lid.svg" // put your logo file in /public (svg/png)
+                alt="LID Consulting"
+                width={36}
+                height={36}
+                className="h-9 w-9"
+                priority
+              />
+              <div>
+                <div className="text-sm font-semibold tracking-tight">LID Consulting</div>
+                <div className="text-xs text-slate-500">Simplyfying Sustainability</div>
+              </div>
+            </Link>
+          </div>
+        </div>
+      </header>
+
 
       {/* HERO OVERVIEW */}
       <main className="mx-auto max-w-7xl px-6 py-8">
@@ -543,7 +546,7 @@ export default function NEPIAuditDashboard() {
       {/* FOOTER */}
       <footer className="mx-auto max-w-7xl px-6 pb-10 pt-4 text-xs text-slate-500">
         <div className="flex flex-col items-start justify-between gap-3 border-t pt-4 md:flex-row md:items-center">
-          <div>© {new Date().getFullYear()} LAMA Sustainability Solutions — NEPI Audit Dashboard</div>
+          <div>© {new Date().getFullYear()} LID Sustainability Solutions</div>
           <div className="flex items-center gap-3">
             <span>Evidence-first • No print/export controls</span>
           </div>
