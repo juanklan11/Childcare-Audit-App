@@ -4,6 +4,7 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { DollarSign, ClipboardCheck, Users } from "lucide-react";
 
 /* ----------------------------- Chat widget ----------------------------- */
 
@@ -163,33 +164,12 @@ function ChatWidget() {
 /* ----------------------------- Page content ---------------------------- */
 
 export default function Home() {
-  const [open, setOpen] = useState(false);
-  const menuRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    function onClick(e: MouseEvent) {
-      if (menuRef.current && !menuRef.current.contains(e.target as Node)) {
-        setOpen(false);
-      }
-    }
-    function onKey(e: KeyboardEvent) {
-      if (e.key === "Escape") setOpen(false);
-    }
-    document.addEventListener("mousedown", onClick);
-    document.addEventListener("keydown", onKey);
-    return () => {
-      document.removeEventListener("mousedown", onClick);
-      document.removeEventListener("keydown", onKey);
-    };
-  }, []);
-
   return (
     <main className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
-      {/* Top bar with logo + sign in menu */}
+      {/* Header with logo only */}
       <header className="sticky top-0 z-40 border-b bg-white/80 backdrop-blur">
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-          {/* Left: Logo + title */}
-          <div className="flex items-center gap-3">
+        <div className="mx-auto flex max-w-6xl items-center gap-3 px-6 py-4">
+          <Link href="/" className="flex items-center gap-3">
             <Image
               src="/logo-lid.svg"
               alt="LID Consulting"
@@ -206,126 +186,89 @@ export default function Home() {
                 Simplifying Sustainability
               </div>
             </div>
-          </div>
-
-          {/* Right: Sign in dropdown */}
-          <div className="relative" ref={menuRef}>
-            <button
-              type="button"
-              onClick={() => setOpen((v) => !v)}
-              aria-haspopup="menu"
-              aria-expanded={open}
-              className="inline-flex items-center gap-1 rounded-xl border px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50"
-            >
-              <span>Sign in</span>
-              <svg
-                className={`h-4 w-4 transition-transform ${
-                  open ? "rotate-180" : ""
-                }`}
-                viewBox="0 0 20 20"
-                fill="currentColor"
-                aria-hidden="true"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M5.23 7.21a.75.75 0 011.06.02L10 11.084l3.71-3.853a.75.75 0 111.08 1.04l-4.24 4.4a.75.75 0 01-1.08 0l-4.24-4.4a.75.75 0 01.02-1.06z"
-                  clipRule="evenodd"
-                />
-              </svg>
-            </button>
-
-            {open && (
-              <div
-                role="menu"
-                className="absolute right-0 mt-2 w-56 overflow-hidden rounded-xl border bg-white shadow-lg"
-              >
-                <div className="p-2 text-xs uppercase tracking-wide text-slate-500">
-                  Access
-                </div>
-                <nav className="flex flex-col p-2">
-                  <Link
-                    href="/snapshot"
-                    onClick={() => setOpen(false)}
-                    className="rounded-lg px-3 py-2 text-sm hover:bg-slate-50"
-                    role="menuitem"
-                  >
-                    Parent Snapshot (Public)
-                  </Link>
-                  <Link
-                    href="/dashboard"
-                    onClick={() => setOpen(false)}
-                    className="rounded-lg px-3 py-2 text-sm hover:bg-slate-50"
-                    role="menuitem"
-                  >
-                    Client Dashboard
-                  </Link>
-                </nav>
-              </div>
-            )}
-          </div>
+          </Link>
         </div>
       </header>
 
-      {/* Page content */}
-      <section className="mx-auto max-w-6xl px-6 pb-4 pt-10">
+      {/* Hero Section */}
+      <section className="mx-auto max-w-6xl px-6 pb-4 pt-10 text-center">
         <h1 className="text-3xl font-semibold tracking-tight text-slate-900">
           Childcare Sustainability Audit Dashboard
         </h1>
-        <p className="mt-3 max-w-3xl text-slate-600">
-          Childcare is now a <strong>$14.6 billion</strong> sector in Australia, serving more{" "}
-          than <strong>1.7 million children</strong> each year. But providers face{" "}
-          mounting challenges: rising fees (up 20–32% since 2018), workforce and{" "}
-          compliance pressures, and growing expectations for environmental disclosure.{" "}
-          We partner with <strong>Operators</strong>, <strong>Developers</strong> and{" "}
-          <strong>Investors</strong> to cut energy and water costs, embed evidence for{" "}
-          <strong>NQS Quality Areas 3 &amp; 7</strong>, and provide{" "}
-          <strong>auditable sustainability metrics</strong> for parents, councils, and financiers.
+        <p className="mt-3 max-w-3xl mx-auto text-lg text-slate-600">
+          Evidence-first audits to cut costs, prove compliance, and build trust
+          with parents and investors.
         </p>
+        <p className="mt-4 max-w-3xl mx-auto text-slate-600">
+          Childcare is now a{" "}
+          <span className="font-semibold text-emerald-600">$14.6 billion</span>{" "}
+          sector in Australia, serving more than{" "}
+          <span className="font-semibold text-emerald-600">1.7 million children</span>{" "}
+          each year. But providers face mounting challenges: rising fees (up{" "}
+          <span className="font-semibold text-rose-600">20–32%</span> since 2018),
+          workforce and compliance pressures, and growing expectations for
+          environmental disclosure.
+        </p>
+      </section>
 
-        <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          <div className="rounded-2xl border bg-white p-5 shadow-sm">
+      {/* Features */}
+      <section className="mx-auto max-w-6xl px-6 pb-4 pt-6">
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="rounded-2xl border bg-white p-6 shadow-sm text-left">
+            <DollarSign className="h-6 w-6 text-emerald-600 mb-2" />
             <div className="text-sm font-semibold">Reduce operating costs</div>
             <p className="mt-1 text-sm text-slate-600">
-              Energy and water now account for up to <strong>12–15% of OPEX</strong> in some{" "}
-              centres. Our audits target HVAC, lighting, tariffs and procurement with typical{" "}
-              paybacks of <span className="font-medium">12–24 months</span>.
+              Energy and water now account for up to{" "}
+              <strong>12–15% of OPEX</strong>. Our audits target HVAC, lighting,
+              tariffs and procurement with typical paybacks of{" "}
+              <span className="font-medium">12–24 months</span>.
             </p>
           </div>
-          <div className="rounded-2xl border bg-white p-5 shadow-sm">
+          <div className="rounded-2xl border bg-white p-6 shadow-sm text-left">
+            <ClipboardCheck className="h-6 w-6 text-emerald-600 mb-2" />
             <div className="text-sm font-semibold">Compliance made easy</div>
             <p className="mt-1 text-sm text-slate-600">
-              Align operations with <strong>NQS 3 (Physical Environment)</strong> and{" "}
-              <strong>NQS 7 (Governance &amp; Leadership)</strong>. We translate sustainability{" "}
-              actions into clear, assessor-ready evidence.
+              Align operations with <strong>NQS 3 (Physical Environment)</strong>{" "}
+              and <strong>NQS 7 (Governance &amp; Leadership)</strong>. We
+              translate sustainability actions into assessor-ready evidence.
             </p>
           </div>
-          <div className="rounded-2xl border bg-white p-5 shadow-sm">
-            <div className="text-sm font-semibold">Investor &amp; parent confidence</div>
+          <div className="rounded-2xl border bg-white p-6 shadow-sm text-left">
+            <Users className="h-6 w-6 text-emerald-600 mb-2" />
+            <div className="text-sm font-semibold">
+              Investor &amp; parent confidence
+            </div>
             <p className="mt-1 text-sm text-slate-600">
-              With average daily fees at <strong>$123+</strong>, families and investors{" "}
-              expect transparency. Our dashboards provide <strong>NEPI-aligned KPIs</strong> and{" "}
-              <strong>parent-friendly snapshots</strong> that strengthen trust and marketability.
+              With average daily fees at <strong>$123+</strong>, families and
+              investors expect transparency. Our dashboards provide{" "}
+              <strong>NEPI-aligned KPIs</strong> and{" "}
+              <strong>parent-friendly snapshots</strong> that strengthen trust
+              and marketability.
             </p>
           </div>
         </div>
       </section>
 
       {/* CTA buttons */}
-      <section className="mx-auto max-w-6xl px-6 pt-6">
-        <div className="flex gap-4">
+      <section className="mx-auto max-w-6xl px-6 pt-6 text-center">
+        <div className="flex flex-col sm:flex-row justify-center gap-4">
           <Link
             href="/snapshot"
-            className="inline-flex items-center justify-center rounded-xl bg-emerald-600 px-5 py-3 text-sm font-medium text-white shadow hover:bg-emerald-700"
+            className="inline-flex items-center justify-center rounded-xl bg-emerald-600 px-6 py-3 text-sm font-semibold text-white shadow hover:bg-emerald-700"
           >
             Go to Parent Snapshot
           </Link>
           <Link
             href="/dashboard"
-            className="inline-flex items-center justify-center rounded-xl bg-slate-100 px-5 py-3 text-sm font-medium text-slate-700 shadow hover:bg-slate-200"
+            className="inline-flex items-center justify-center rounded-xl bg-slate-100 px-6 py-3 text-sm font-semibold text-slate-700 shadow hover:bg-slate-200"
           >
             Go to Client Dashboard
           </Link>
         </div>
+        <p className="mt-2 text-xs text-slate-500">
+          Parent view: simple, transparent reporting • Client view: detailed
+          operational insights
+        </p>
       </section>
 
       {/* Contact Us section */}
@@ -360,7 +303,11 @@ export default function Home() {
       </footer>
 
       {/* Floating chat app */}
-      <ChatWidget />
+
     </main>
   );
 }
+
+
+
+
