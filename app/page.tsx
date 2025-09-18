@@ -287,45 +287,50 @@ export default function Home() {
         </div>
       </header>
 
-      {/* Page content only (no sign-in tiles) */}
+        {/* Page content only (rewritten with industry context) */}
       <section className="mx-auto max-w-6xl px-6 pb-4 pt-10">
         <h1 className="text-3xl font-semibold tracking-tight text-slate-900">
-          Reduce OPEX, satisfy NQS 3 &amp; 7, and disclose environmental
-          performance with confidence
+          Smarter childcare operations: lower costs, higher compliance, stronger sustainability
         </h1>
         <p className="mt-3 max-w-3xl text-slate-600">
-          We help childcare <strong>Operators</strong> and{" "}
-          <strong>Designers</strong> cut energy &amp; water costs, meet{" "}
-          <strong>NQS Quality Areas 3 &amp; 7</strong> obligations with clear
-          evidence, and produce<strong> investor-ready sustainability
-          disclosures</strong>. Our NEPI-aligned audits, dashboards, and
-          DA-ready playbooks reduce rework and accelerate decisions.
+          Childcare is now a <strong>$14.6 billion</strong> sector in Australia:contentReference[oaicite:4]{index=4}, serving more 
+          than <strong>1.7 million children</strong> each year:contentReference[oaicite:5]{index=5}. But providers face 
+          mounting challenges: rising fees (up 20–32% since 2018):contentReference[oaicite:6]{index=6}, workforce and 
+          compliance pressures, and growing expectations for environmental disclosure. 
+          We partner with <strong>Operators</strong>, <strong>Developers</strong> and 
+          <strong> Investors</strong> to cut energy and water costs, embed evidence for 
+          <strong> NQS Quality Areas 3 & 7</strong>, and provide <strong>auditable sustainability 
+          metrics</strong> for parents, councils, and financiers.
         </p>
 
         <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           <div className="rounded-2xl border bg-white p-5 shadow-sm">
-            <div className="text-sm font-semibold">Lower OPEX</div>
+            <div className="text-sm font-semibold">Reduce operating costs</div>
             <p className="mt-1 text-sm text-slate-600">
-              Targeted HVAC tuning, LEDs, controls, procurement and tariffs.
-              Typical payback<span className="font-medium"> 12–24 months</span>.
+              Energy and water now account for up to <strong>12–15% of OPEX</strong> in some 
+              centres. Our audits target HVAC, lighting, tariffs and procurement with typical 
+              paybacks of <span className="font-medium">12–24 months</span>.
             </p>
           </div>
           <div className="rounded-2xl border bg-white p-5 shadow-sm">
-            <div className="text-sm font-semibold">NQS 3 &amp; 7 support</div>
+            <div className="text-sm font-semibold">Compliance made easy</div>
             <p className="mt-1 text-sm text-slate-600">
-              Evidence-first workflows mapped to facilities (3) and
-              leadership/governance (7).
+              Align operations with <strong>NQS 3 (Physical Environment)</strong> and 
+              <strong> NQS 7 (Governance & Leadership)</strong>. We translate sustainability 
+              actions into clear, assessor-ready evidence.
             </p>
           </div>
           <div className="rounded-2xl border bg-white p-5 shadow-sm">
-            <div className="text-sm font-semibold">Environmental disclosure</div>
+            <div className="text-sm font-semibold">Investor & parent confidence</div>
             <p className="mt-1 text-sm text-slate-600">
-              Clear, auditable KPIs feeding sustainability reporting and
-              parent-friendly snapshots.
+              With average daily fees at <strong>$123+</strong>:contentReference[oaicite:7]{index=7}, families and investors 
+              expect transparency. Our dashboards provide <strong>NEPI-aligned KPIs</strong> and 
+              <strong> parent-friendly snapshots</strong> that strengthen trust and marketability.
             </p>
           </div>
         </div>
       </section>
+
 
       <footer className="mx-auto max-w-6xl px-6 pb-10 pt-6 text-xs text-slate-500">
         <div className="flex flex-col items-start justify-between gap-3 border-t pt-4 md:flex-row md:items-center">
