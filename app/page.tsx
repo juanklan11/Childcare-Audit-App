@@ -197,7 +197,7 @@ export default function Home() {
         </h1>
         <p className="mt-3 max-w-3xl mx-auto text-lg text-slate-600">
           Evidence-first audits to cut costs, prove compliance, and build trust
-          with parents and investors.
+           with parents, staff, investors, and landlords.
         </p>
         <p className="mt-4 max-w-3xl mx-auto text-slate-600">
           Childcare is now a{" "}
