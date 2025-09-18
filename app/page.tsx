@@ -295,14 +295,15 @@ export default function Home() {
           performance with confidence
         </h1>
         <p className="mt-3 max-w-3xl text-slate-600">
-          Childcare is now a <strong>$14.6 billion</strong> sector in Australia:contentReference[oaicite:4]{index=4}, serving more 
-          than <strong>1.7 million children</strong> each year:contentReference[oaicite:5]{index=5}. But providers face 
-          mounting challenges: rising fees (up 20–32% since 2018):contentReference[oaicite:6]{index=6}, workforce and 
-          compliance pressures, and growing expectations for environmental disclosure. 
-          We partner with <strong>Operators</strong>, <strong>Developers</strong> and 
-          <strong> Investors</strong> to cut energy and water costs, embed evidence for 
-          <strong> NQS Quality Areas 3 & 7</strong>, and provide <strong>auditable sustainability 
-          metrics</strong> for parents, councils, and financiers.
+          Childcare is now a <strong>$14.6 billion</strong> sector in Australia, serving more{" "}
+          than <strong>1.7 million children</strong> each year. But providers face{" "}
+          mounting challenges: rising fees (up 20–32% since 2018), workforce and{" "}
+          compliance pressures, and growing expectations for environmental disclosure.{" "}
+          We partner with <strong>Operators</strong>, <strong>Developers</strong> and{" "}
+          <strong>Investors</strong> to cut energy and water costs, embed evidence for{" "}
+          <strong>NQS Quality Areas 3 &amp; 7</strong>, and provide{" "}
+          <strong>auditable sustainability metrics</strong> for parents, councils, and financiers.
+
         </p>
 
         <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
