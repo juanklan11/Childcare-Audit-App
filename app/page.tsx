@@ -308,21 +308,27 @@ export default function Home() {
             </p>
           </div>
         </div>
+      </section>
 
-        {/* CTA buttons */}
-        <div className="mt-8 flex gap-4">
-          <Link
-            href="/snapshot"
-            className="inline-flex items-center justify-center rounded-xl bg-emerald-600 px-5 py-3 text-sm font-medium text-white shadow hover:bg-emerald-700"
-          >
-            Go to Parent Snapshot
-          </Link>
-          <Link
-            href="/dashboard"
-            className="inline-flex items-center justify-center rounded-xl bg-slate-100 px-5 py-3 text-sm font-medium text-slate-700 shadow hover:bg-slate-200"
-          >
-            Go to Client Dashboard
-          </Link>
+      {/* Contact Us section */}
+      <section className="mx-auto max-w-6xl px-6 py-10">
+        <div className="rounded-2xl border bg-white p-6 shadow-sm">
+          <h2 className="text-xl font-semibold text-slate-900">Ready to begin?</h2>
+          <p className="mt-3 text-sm text-slate-700">
+            <strong>Contact Craig Harris - LID Consulting</strong>
+            <br />
+            P 03 9016 9486
+            <br />
+            M 0434 911 404
+            <br />
+            E{" "}
+            <a
+              href="mailto:craigharris@lidconsulting.com.au"
+              className="text-emerald-600 hover:underline"
+            >
+              craigharris@lidconsulting.com.au
+            </a>
+          </p>
         </div>
       </section>
 
