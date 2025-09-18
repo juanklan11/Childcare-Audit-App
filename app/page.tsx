@@ -22,7 +22,6 @@ function ChatWidget() {
     },
   ]);
 
-  // Keep an always-fresh reference to messages for building request payloads
   const messagesRef = useRef<ChatMessage[]>(messages);
   useEffect(() => {
     messagesRef.current = messages;
@@ -30,7 +29,6 @@ function ChatWidget() {
 
   const listRef = useRef<HTMLDivElement>(null);
 
-  // Auto-scroll when messages change or panel opens
   useEffect(() => {
     listRef.current?.scrollTo({
       top: listRef.current.scrollHeight,
@@ -38,7 +36,6 @@ function ChatWidget() {
     });
   }, [messages, isOpen]);
 
-  // Optional: prevent overlapping requests if user spams "Send"
   const pending = useRef<AbortController | null>(null);
 
   async function onSend(e: React.FormEvent) {
@@ -46,16 +43,13 @@ function ChatWidget() {
     const text = input.trim();
     if (!text || busy) return;
 
-    // Optimistic append using functional update (safe in concurrent React)
     setBusy(true);
     setInput("");
     setMessages((prev) => [...prev, { role: "user", content: text }]);
 
-    // Build the payload from the freshest messages + the new one
     const outgoing = [...messagesRef.current, { role: "user", content: text }];
     const payload = { messages: outgoing.slice(-12) };
 
-    // Abort any in-flight request
     pending.current?.abort();
     const ac = new AbortController();
     pending.current = ac;
@@ -142,7 +136,10 @@ function ChatWidget() {
             )}
           </div>
 
-          <form onSubmit={onSend} className="flex items-center gap-2 border-t p-2">
+          <form
+            onSubmit={onSend}
+            className="flex items-center gap-2 border-t p-2"
+          >
             <input
               value={input}
               onChange={(e) => setInput(e.target.value)}
@@ -169,7 +166,6 @@ export default function Home() {
   const [open, setOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
 
-  // close on click outside
   useEffect(() => {
     function onClick(e: MouseEvent) {
       if (menuRef.current && !menuRef.current.contains(e.target as Node)) {
@@ -207,7 +203,7 @@ export default function Home() {
                 LID Consulting
               </div>
               <div className="text-xs text-slate-500">
-                Childcare Energy & Sustainability
+                Simplifying Sustainability
               </div>
             </div>
           </div>
@@ -222,7 +218,6 @@ export default function Home() {
               className="inline-flex items-center gap-1 rounded-xl border px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50"
             >
               <span>Sign in</span>
-              {/* chevron */}
               <svg
                 className={`h-4 w-4 transition-transform ${
                   open ? "rotate-180" : ""
@@ -264,22 +259,6 @@ export default function Home() {
                   >
                     Client Dashboard
                   </Link>
-                  <Link
-                    href="/auditor"
-                    onClick={() => setOpen(false)}
-                    className="rounded-lg px-3 py-2 text-sm hover:bg-slate-50"
-                    role="menuitem"
-                  >
-                    Auditor Workspace
-                  </Link>
-                  <Link
-                    href="/admin"
-                    onClick={() => setOpen(false)}
-                    className="rounded-lg px-3 py-2 text-sm hover:bg-slate-50"
-                    role="menuitem"
-                  >
-                    Admin
-                  </Link>
                 </nav>
               </div>
             )}
@@ -287,8 +266,7 @@ export default function Home() {
         </div>
       </header>
 
-        {/* Page content only (rewritten with industry context) */}
-      {/* Page content only (no sign-in tiles) */}
+      {/* Page content */}
       <section className="mx-auto max-w-6xl px-6 pb-4 pt-10">
         <h1 className="text-3xl font-semibold tracking-tight text-slate-900">
           Childcare Sustainability Audit Dashboard
@@ -302,7 +280,6 @@ export default function Home() {
           <strong>Investors</strong> to cut energy and water costs, embed evidence for{" "}
           <strong>NQS Quality Areas 3 &amp; 7</strong>, and provide{" "}
           <strong>auditable sustainability metrics</strong> for parents, councils, and financiers.
-
         </p>
 
         <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -331,21 +308,35 @@ export default function Home() {
             </p>
           </div>
         </div>
-      </section>
 
+        {/* CTA buttons */}
+        <div className="mt-8 flex gap-4">
+          <Link
+            href="/snapshot"
+            className="inline-flex items-center justify-center rounded-xl bg-emerald-600 px-5 py-3 text-sm font-medium text-white shadow hover:bg-emerald-700"
+          >
+            Go to Parent Snapshot
+          </Link>
+          <Link
+            href="/dashboard"
+            className="inline-flex items-center justify-center rounded-xl bg-slate-100 px-5 py-3 text-sm font-medium text-slate-700 shadow hover:bg-slate-200"
+          >
+            Go to Client Dashboard
+          </Link>
+        </div>
+      </section>
 
       <footer className="mx-auto max-w-6xl px-6 pb-10 pt-6 text-xs text-slate-500">
         <div className="flex flex-col items-start justify-between gap-3 border-t pt-4 md:flex-row md:items-center">
           <div>
-            © {new Date().getFullYear()} LID Consulting — Childcare Energy &
-            Sustainability
+            © {new Date().getFullYear()} LID Consulting — Sustainability Audit
           </div>
           <div>Evidence-first • NEPI-aligned • Privacy-respecting</div>
         </div>
       </footer>
 
       {/* Floating chat app */}
-      <ChatWidget />
+
     </main>
   );
 }
