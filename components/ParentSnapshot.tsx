@@ -3,6 +3,7 @@ import React from "react";
 import { ResponsiveContainer, ComposedChart, CartesianGrid, XAxis, YAxis, Area, Line, Bar, Legend, Tooltip as ReTooltip } from "recharts";
 import { Sparkles, Leaf, Droplet, BarChart3 } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 // ---- AU financial year (Apr → Mar) sample series ----
 const months = ["Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec","Jan","Feb","Mar"];
@@ -36,24 +37,26 @@ export default function ParentSnapshot() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white text-slate-900">
       {/* LID-style header */}
-      <header className="sticky top-0 z-40 border-b bg-white/80 backdrop-blur">
-              <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-                <div className="flex items-center gap-3">
-                  <Image
-                    src="/logo-lid.svg" // put your logo file in /public (svg/png)
-                    alt="LID Consulting"
-                    width={36}
-                    height={36}
-                    className="h-9 w-9"
-                    priority
-                  />
-                  <div>
-                    <div className="text-sm font-semibold tracking-tight">LID Consulting</div>
-                    <div className="text-xs text-slate-500">Childcare Energy & Sustainability</div>
-                  </div>
-                </div>
-              </div>
-            </header>
+     <header className="sticky top-0 z-40 border-b bg-white/80 backdrop-blur">
+      <div className="mx-auto flex max-w-6xl items-center justify-between px-0 py-4">
+        <div className="flex items-center gap-3">
+          <Link href="/" className="flex items-center gap-3">
+            <Image
+              src="/logo-lid.svg" // put your logo file in /public (svg/png)
+              alt="LID Consulting"
+              width={36}
+              height={36}
+              className="h-9 w-9"
+              priority
+            />
+            <div>
+              <div className="text-sm font-semibold tracking-tight">LID Consulting</div>
+              <div className="text-xs text-slate-500">Simplyfying Sustainability</div>
+            </div>
+          </Link>
+        </div>
+      </div>
+    </header>
       
       <main className="mx-auto max-w-6xl px-6 py-8">
         {/* KPI pills */}
