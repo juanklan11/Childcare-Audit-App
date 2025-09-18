@@ -330,7 +330,7 @@ export default function Home() {
             </a>
           </p>
         </div>
-      </section>n>
+      </section>
 
       <footer className="mx-auto max-w-6xl px-6 pb-10 pt-6 text-xs text-slate-500">
         <div className="flex flex-col items-start justify-between gap-3 border-t pt-4 md:flex-row md:items-center">
