@@ -310,6 +310,24 @@ export default function Home() {
         </div>
       </section>
 
+      {/* CTA buttons */}
+      <section className="mx-auto max-w-6xl px-6 pt-6">
+        <div className="flex gap-4">
+          <Link
+            href="/snapshot"
+            className="inline-flex items-center justify-center rounded-xl bg-emerald-600 px-5 py-3 text-sm font-medium text-white shadow hover:bg-emerald-700"
+          >
+            Go to Parent Snapshot
+          </Link>
+          <Link
+            href="/dashboard"
+            className="inline-flex items-center justify-center rounded-xl bg-slate-100 px-5 py-3 text-sm font-medium text-slate-700 shadow hover:bg-slate-200"
+          >
+            Go to Client Dashboard
+          </Link>
+        </div>
+      </section>
+
       {/* Contact Us section */}
       <section className="mx-auto max-w-6xl px-6 py-10">
         <div className="rounded-2xl border bg-white p-6 shadow-sm">
@@ -342,7 +360,7 @@ export default function Home() {
       </footer>
 
       {/* Floating chat app */}
-
+      <ChatWidget />
     </main>
   );
 }
