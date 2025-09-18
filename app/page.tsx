@@ -291,8 +291,7 @@ export default function Home() {
       {/* Page content only (no sign-in tiles) */}
       <section className="mx-auto max-w-6xl px-6 pb-4 pt-10">
         <h1 className="text-3xl font-semibold tracking-tight text-slate-900">
-          Reduce OPEX, satisfy NQS 3 &amp; 7, and disclose environmental
-          performance with confidence
+          Childcare Sustainability Audit Dashboard
         </h1>
         <p className="mt-3 max-w-3xl text-slate-600">
           Childcare is now a <strong>$14.6 billion</strong> sector in Australia, serving more{" "}
