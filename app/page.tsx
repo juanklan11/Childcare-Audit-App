@@ -288,9 +288,11 @@ export default function Home() {
       </header>
 
         {/* Page content only (rewritten with industry context) */}
+      {/* Page content only (no sign-in tiles) */}
       <section className="mx-auto max-w-6xl px-6 pb-4 pt-10">
         <h1 className="text-3xl font-semibold tracking-tight text-slate-900">
-          Smarter childcare operations: lower costs, higher compliance, stronger sustainability
+          Reduce OPEX, satisfy NQS 3 &amp; 7, and disclose environmental
+          performance with confidence
         </h1>
         <p className="mt-3 max-w-3xl text-slate-600">
           Childcare is now a <strong>$14.6 billion</strong> sector in Australia:contentReference[oaicite:4]{index=4}, serving more 
@@ -305,27 +307,24 @@ export default function Home() {
 
         <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           <div className="rounded-2xl border bg-white p-5 shadow-sm">
-            <div className="text-sm font-semibold">Reduce operating costs</div>
+            <div className="text-sm font-semibold">Lower OPEX</div>
             <p className="mt-1 text-sm text-slate-600">
-              Energy and water now account for up to <strong>12–15% of OPEX</strong> in some 
-              centres. Our audits target HVAC, lighting, tariffs and procurement with typical 
-              paybacks of <span className="font-medium">12–24 months</span>.
+              Targeted HVAC tuning, LEDs, controls, procurement and tariffs.
+              Typical payback<span className="font-medium"> 12–24 months</span>.
             </p>
           </div>
           <div className="rounded-2xl border bg-white p-5 shadow-sm">
-            <div className="text-sm font-semibold">Compliance made easy</div>
+            <div className="text-sm font-semibold">NQS 3 &amp; 7 support</div>
             <p className="mt-1 text-sm text-slate-600">
-              Align operations with <strong>NQS 3 (Physical Environment)</strong> and 
-              <strong> NQS 7 (Governance & Leadership)</strong>. We translate sustainability 
-              actions into clear, assessor-ready evidence.
+              Evidence-first workflows mapped to facilities (3) and
+              leadership/governance (7).
             </p>
           </div>
           <div className="rounded-2xl border bg-white p-5 shadow-sm">
-            <div className="text-sm font-semibold">Investor & parent confidence</div>
+            <div className="text-sm font-semibold">Environmental disclosure</div>
             <p className="mt-1 text-sm text-slate-600">
-              With average daily fees at <strong>$123+</strong>:contentReference[oaicite:7]{index=7}, families and investors 
-              expect transparency. Our dashboards provide <strong>NEPI-aligned KPIs</strong> and 
-              <strong> parent-friendly snapshots</strong> that strengthen trust and marketability.
+              Clear, auditable KPIs feeding sustainability reporting and
+              parent-friendly snapshots.
             </p>
           </div>
         </div>
