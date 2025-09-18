@@ -9,9 +9,6 @@ import { NextRequest, NextResponse } from "next/server";
  *  ADMIN_USER / ADMIN_PASS     → /admin, /leads, /providers (admin area)
  */
 function needAuthFor(pathname: string) {
-  if (pathname.startsWith("/dashboard")) {
-    return { realm: 'Dashboard', user: process.env.DASH_USER, pass: process.env.DASH_PASS };
-  }
   if (pathname.startsWith("/auditor")) {
     return { realm: 'Auditor', user: process.env.AUDITOR_USER, pass: process.env.AUDITOR_PASS };
   }
