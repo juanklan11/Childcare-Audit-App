@@ -1,4 +1,4 @@
-// File: D:\2025\LAMA\Childcare-Audit-App\app\layout.tsx
+// File: C:\Users\juan_\Documents\Github\Childcare-Audit-App\app\layout.tsx
 import * as entry from '../../../app/layout.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

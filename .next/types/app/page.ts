@@ -1,4 +1,4 @@
-// File: D:\2025\LAMA\Childcare-Audit-App\app\page.tsx
+// File: C:\Users\juan_\Documents\Github\Childcare-Audit-App\app\page.tsx
 import * as entry from '../../../app/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

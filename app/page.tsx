@@ -193,7 +193,7 @@ export default function Home() {
       {/* Hero Section */}
       <section className="mx-auto max-w-6xl px-6 pb-4 pt-10 text-center">
         <h1 className="text-3xl font-semibold tracking-tight text-slate-900">
-          Childcare Sustainability Audit Dashboard
+          Childcare Sustainability Audit 
         </h1>
         <p className="mt-3 max-w-3xl mx-auto text-lg text-slate-600">
           Evidence-first audits to cut costs, prove compliance, and build trust
